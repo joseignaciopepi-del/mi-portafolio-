@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jose Ignacio Pepi | Portafolio Profesional</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- FontAwesome para iconos -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+    <!-- Música de fondo: Beethoven Sonata 14 Claro de Luna -->
+    <div class="music-player">
+        <p><i class="fa-solid fa-music"></i> Beethoven - Claro de Luna</p>
+        
+        <!-- Tu archivo local bien enlazado -->
+        <audio id="bg-music" loop>
+            <source src="beethoven.mp3" type="audio/mpeg">
+            Tu navegador no soporta el elemento de audio.
+        </audio>
+        
+        <!-- Botón para reproducir y pausar -->
+        <button id="play-btn" onclick="toggleMusic()">▶ Play</button>
+    </div>
+
+    <!-- Encabezado / Hero Section -->
+    <header class="hero">
+        <div class="hero-content">
+            <h1>Jose Ignacio Pepi</h1>
+            <p class="subtitle">Programador full stack Junior / Desarrollador / Diseñador</p>
+            <a href="#contacto" class="btn">Contáctame</a>
+        </div>
+    </header>
+
+    <!-- Sección Sobre Mí -->
+    <section id="sobre-mi" class="section">
+        <h2>Sobre Mí</h2>
+        <div class="perfil-container">
+            <h3>Perfil Profesional</h3>
+            <p><strong>Desarrollador de Software & Especialista en Soporte Técnico de Hardware</strong></p>
+            <p>Apasionado por la tecnología en todas sus capas, desde las líneas de código que dan vida a un programa hasta los componentes físicos que lo hacen posible. Cuento con un perfil versátil que combina la lógica del desarrollo de software con la destreza técnica del mantenimiento, ensamble y optimización de equipos de cómputo.</p>
+
+            <h3>Mis Pasiones</h3>
+            <p>Me fascina entender el funcionamiento interno de las cosas. Disfruto tanto resolviendo problemas lógicos complejos a través de la programación, como desarmando, diagnosticando y devolviendo a la vida equipos de escritorio y portátiles.</p>
+
+            <h3>Habilidades Clave</h3>
+            <ul>
+                <li><strong>Desarrollo de Software:</strong> Resolución de problemas, lógica de programación y escritura de código limpio.</li>
+                <li><strong>Hardware y Soporte:</strong> Diagnóstico de fallas, mantenimiento preventivo y correctivo, ensamble de componentes y optimización de rendimiento de PC.</li>
+                <li><strong>Enfoque Integral:</strong> Capacidad para entender la relación directa entre el software y el hardware para maximizar la eficiencia de los sistemas.</li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- Sección de Proyectos -->
+    <section id="proyectos" class="section">
+        <h2>Mis Proyectos</h2>
+       <div class="project-card">
+    <h3><i class="fa-solid fa-briefcase"></i> Portafolio Profesional Digital</h3>
+    <p><strong>Tecnologías:</strong> HTML5, CSS3, JavaScript, GitHub Pages.</p>
+    <p>Diseño de mi identidad digital inicial, aplicando buenas prácticas de maquetación semántica y optimización de rendimiento web.</p>
+    <a href="https://github.com/tu-usuario/tu-repositorio-portafolio" target="_blank" rel="noopener noreferrer" class="project-link">Ver Código en GitHub →</a>
+</div>
+          <div class="project-card">
+    <h3><i class="fa-solid fa-gamepad"></i> Desarrollo de Videojuego Independiente</h3>
+    <p><strong>Tecnologías:</strong> Unity Engine, C#, Programación Orientada a Objetos.</p>
+    <p>Estoy desarrollando mi propio videojuego. Acá aplico lógica pura en C# para las mecánicas de los personajes, gestión de físicas, interfaces de usuario (UI) y optimización de recursos para que corra fluido.</p>
+    <a href="#" target="_blank" rel="noopener noreferrer" class="project-link">Ver Repositorio / Avances →</a>
+</div>
+      <div class="project-card">
+    <h3><i class="fa-solid fa-lightbulb"></i> Sistema de Gestión FoquiCor</h3>
+    <p><strong>Tecnologías:</strong> HTML5, CSS3, JavaScript (Vanilla).</p>
+    <p>Desarrollo de una aplicación web coperativa junto a Carvajal Martín, Torres Maximiliano, Barrionuevo Navarro Santiago, para el control de stock e iluminación. Incluye registro de productos, procesamiento de ventas con cálculo de IVA y una consola de logs interactiva.</p>
+    <a href="http://127.0.0.1:5501/foticor/index.html
+    " class="project-link">Probar Sistema →</a>
+</div>
+        </div>
+    </section>
+
+    <!-- Sección de Contacto / Footer -->
+    <footer id="contacto">
+        <h2>Contacto</h2>
+        <p>¿Interesado en trabajar juntos? ¡Hablemos!</p>
+        <div class="social-links">
+            <!-- Recuerda cambiar el '#' por los enlaces reales a tus perfiles cuando los tengas -->
+            <a href="https://www.linkedin.com/in/nacho-pepi-984141285/" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-linkedin"></i> LinkedIn</a>
+            <a href="https://github.com/joseignaciopepi-del" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-github"></i> GitHub</a>
+            <a href="mailto:Joseignaciopepi@gmail.com"><i class="fa-solid fa-envelope"></i> Correo</a>
+        </div>
+        <p class="copyright">&copy; 2026 Jose Ignacio Pepi. Todos los derechos reservados.</p>
+    </footer>
+
+    <!-- Scripts unificados para el reproductor de audio -->
+    <script>
+        function toggleMusic() {
+            const audio = document.getElementById('bg-music');
+            const btn = document.getElementById('play-btn');
+
+            if (audio.paused) {
+                audio.play();
+                btn.textContent = '⏸ Pause';
+            } else {
+                audio.pause();
+                btn.textContent = '▶ Play';
+            }
+        }
+
+        // Intenta arrancar la música con el primer clic del usuario en la pantalla y actualiza el botón
+        window.addEventListener('click', () => {
+            const audio = document.getElementById('bg-music');
+            const btn = document.getElementById('play-btn');
+            if (audio.paused) {
+                audio.play();
+                btn.textContent = '⏸ Pause';
+            }
+        }, { once: true });
+    </script>
+</body>
+</html>
